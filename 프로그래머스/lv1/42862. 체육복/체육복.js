@@ -1,6 +1,5 @@
 function solution(n, lost, reserve) {
     var answer = n;
-    var tmp = 0;
     
     var hap = lost.filter((i) => reserve.includes(i))
     
