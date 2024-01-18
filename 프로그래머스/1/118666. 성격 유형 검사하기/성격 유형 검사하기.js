@@ -13,31 +13,10 @@ function solution(survey, choices) {
         }
     }
     
-    if (arr['R'] >= arr['T']) {
-        answer += 'R'
-    } else {
-        answer += 'T'
-    }
-    
-    if (arr['C'] >= arr['F']) {
-        answer += 'C'
-    } else {
-        answer += 'F'
-    }
-    
-    if (arr['J'] >= arr['M']) {
-        answer += 'J'
-    } else {
-        answer += 'M'
-    }
-    
-    if (arr['A'] >= arr['N']) {
-        answer += 'A'
-    } else {
-        answer += 'N'
-    }
-    
-    
+    answer += (arr['R'] >= arr['T']) ? 'R' : 'T';
+    answer += (arr['C'] >= arr['F']) ? 'C' : 'F';
+    answer += (arr['J'] >= arr['M']) ? 'J' : 'M';
+    answer += (arr['A'] >= arr['N']) ? 'A' : 'N';
 
     return answer;
 }
