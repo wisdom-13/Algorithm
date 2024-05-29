@@ -4,7 +4,7 @@ scoreArr = []
 
 for i in range(int(n)):
     no, g, s, b = input().split()
-    score = (int(g) * 3) + (int(s) * 2) + (int(b) * 1)
+    score = (int(g) * 10000) + (int(s) * 100) + (int(b) * 1)
     scoreArr.append(score)
     if (no == target):
         targetScore = score
