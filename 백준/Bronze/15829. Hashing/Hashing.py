@@ -1,23 +1,20 @@
-from heapq import *
 import sys
 input = sys.stdin.readline
 
 
-def digit_calculation(alphabet, digit):
-    number = ord(alphabet) - 96
-    return number * (31**digit)
-
-
 def main():
-    int(input().rstrip())
-    string_list = list(input().rstrip())
+    L = int(input().rstrip())
+    M = 1234567891
+    r = 31
+
+    text = input().rstrip()
     result = 0
 
-    for entry in enumerate(string_list):
-        index, value = entry
-        result += digit_calculation(value, index)
+    for i in range(len(text)):
+        num = ord(text[i]) - 96
+        result += num * (r ** i)
 
-    print(result)
+    print(result % M)
 
 
 if __name__ == "__main__":
