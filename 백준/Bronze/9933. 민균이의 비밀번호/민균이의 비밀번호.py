@@ -1,22 +1,23 @@
 import sys
 input = sys.stdin.readline
 
-num = int(input().rstrip())
-password_list = [input().rstrip() for _ in range(num)]
+
+# 패스워드 리스트를 받아서, 뒤집은 패스워드가 존재하는지 여부를 체크하고 길이와 중앙값을 return
+def search_reversed_password(passwords):
+    for password in passwords:
+        if password[::-1] in passwords:
+            return len(password), password[len(password) // 2]
+    return None
 
 
-# password_list에 문자열을 뒤집은 값이 있는지 체크하여 return
-def search_word(text):
-    text = text[::-1]
-    return text in password_list
+def main():
+    num = int(input().rstrip())
+    password_list = set(input().rstrip() for _ in range(num))
+    result = search_reversed_password(password_list)
+
+    if result:
+        print(*result)
 
 
-# 문자열의 길이와 중앙값을 return
-def text_len_median(text):
-    return len(text), text[len(text) // 2]
-
-
-for password in password_list:
-    if search_word(password):
-        print(*text_len_median(password))
-        break
+if __name__ == "__main__":
+    main()
