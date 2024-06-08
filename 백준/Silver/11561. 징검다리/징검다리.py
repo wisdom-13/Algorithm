@@ -1,24 +1,14 @@
-from heapq import *
-import sys
-input = sys.stdin.readline
+import math
+import sys as s
 
+def max_k(N):
+    return int((-1 + math.sqrt(1 + (8 * N))) // 2)
 
-# k(k+1)/2가 num 보다 작아야함
-def get_jump_count(num):
-    low, high = 1, num
+num = int(s.stdin.readline().strip())
+result = []
 
-    while low <= high:
-        mid = (low + high) // 2
-        if mid * (mid + 1) // 2 <= num:
-            low = mid + 1
-        else:
-            high = mid - 1
+for i in range(num):
+    result.append(int(s.stdin.readline().strip()))
 
-    return high
-
-
-T = int(input().rstrip())
-
-for _ in range(T):
-    N = int(input().rstrip())
-    print(get_jump_count(N))
+for i in result:
+    print(max_k(i))
