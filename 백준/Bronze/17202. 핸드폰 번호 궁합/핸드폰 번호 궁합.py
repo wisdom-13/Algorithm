@@ -1,10 +1,10 @@
-from heapq import heappush, heappop
 import sys
 input = sys.stdin.readline
 
 
 A = list(input().rstrip())
 B = list(input().rstrip())
+
 number = []
 new_number = []
 
